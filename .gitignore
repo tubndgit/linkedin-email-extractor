@@ -93,3 +93,7 @@ dmypy.json
 *.log
 logs/
 output/
+
+# Personal configuration and imported contact data
+config/*.local.yaml
+contacts/

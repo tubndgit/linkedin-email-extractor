@@ -1,9 +1,9 @@
+# Prefer environment variables; never commit real API keys.
 api_keys:
-  hunter_io: YOUR_HUNTER_IO_API_KEY
-  neverbounce: YOUR_NEVERBOUNCE_API_KEY
-  anymailfinder: YOUR_ANYMAILFINDER_API_KEY
+  hunter_io: ""       # HUNTER_API_KEY
+  neverbounce: ""     # NEVERBOUNCE_API_KEY
+  anymailfinder: ""   # ANYMAILFINDER_API_KEY
 
-endpoints:
-  hunter_io: "https://api.hunter.io/v2"
-  neverbounce: "https://api.neverbounce.com/v4"
-  anymailfinder: "https://api.anymailfinder.com/v4"
+# Read timeout in seconds (connection timeout is 5 seconds).
+# Anymail Finder recommends allowing 180 seconds for person searches.
+request_timeout: 180
