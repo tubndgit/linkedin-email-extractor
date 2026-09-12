@@ -15,7 +15,7 @@ For each contact, the application:
 1. Validates the name and normalizes the company domain (including website URLs).
 2. Removes duplicate name/domain pairs before paid requests.
 3. Finds an email with Hunter and verifies it with NeverBounce.
-4. Uses AnyMailFinder when no verified email is available, or for every contact
+4. Uses [AnyMailFinder](https://anymailfinder.com?via=henry-b) when no verified email is available, or for every contact
    with `--anymailfinder always`. Its candidates also pass through NeverBounce.
 5. Saves a JSON report with candidates, provider sources, verification outcomes,
    per-contact errors, and a separate `verified_emails` list.
@@ -35,7 +35,8 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Set API keys in the environment:
+Create an [AnyMailFinder account](https://anymailfinder.com?via=henry-b) (affiliate link)
+and get your API key from its dashboard. Set your provider API keys in the environment:
 
 ```sh
 export HUNTER_API_KEY='your-hunter-key'
@@ -48,7 +49,7 @@ Environment variables take precedence over `api_keys.hunter_io`,
 The tracked `config/config.yaml` contains blank values. For personal YAML settings,
 copy it to `config/config.local.yaml` (ignored by Git) and pass
 `--config config/config.local.yaml`. `.env` files are not loaded automatically.
-AnyMailFinder's key is unnecessary when using `--anymailfinder off`.
+[AnyMailFinder](https://anymailfinder.com?via=henry-b)'s key is unnecessary when using `--anymailfinder off`.
 
 The default configuration path is relative to the project, so it works when
 invoking the script from another directory. Input/output paths are relative to
@@ -82,7 +83,7 @@ Enrich your own contacts:
 python -m src.main --input contacts/leads.csv --output output/results.json
 ```
 
-Search AnyMailFinder even when Hunter found a verified email:
+Search [AnyMailFinder](https://anymailfinder.com?via=henry-b) even when Hunter found a verified email:
 
 ```sh
 python -m src.main --input contacts/leads.csv --anymailfinder always

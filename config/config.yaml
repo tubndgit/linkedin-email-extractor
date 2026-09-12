@@ -1,4 +1,5 @@
 # Prefer environment variables; never commit real API keys.
+# AnyMailFinder signup (affiliate): https://anymailfinder.com?via=henry-b
 api_keys:
   hunter_io: ""       # HUNTER_API_KEY
   neverbounce: ""     # NEVERBOUNCE_API_KEY
